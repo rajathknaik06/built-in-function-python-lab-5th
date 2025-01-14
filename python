@@ -1,0 +1,35 @@
+""" There is a malfunctioning keyboard where some letter keys do not work. All other keys on the keyboard work properly. 
+
+
+
+Given a string of words separated by a single space and a string of broken letters, of all distinct letter keys that are broken, return the number of words in the text you can fully type using this keyboard. 
+
+
+
+Example: 
+
+Input: text = "hello world", broken Letters = "AD" 
+
+Output: 1 
+
+
+
+Explanation: We cannot type "world" because the 'd' key is broken. 
+
+Input format :
+The first line contains the input string separated by spaces.
+
+The second line contains a single string of all broken keyboard characters. 
+
+Output format :
+The number of words that can be printed fully."""
+
+s=input().lower().split() 
+keys=input().lower() 
+keyset=set(keys) 
+count=0 
+for word in  s: 
+        wrd_set=set(word) 
+        if wrd_set.isdisjoint(keyset): 
+            count+=1 
+print(count) 
